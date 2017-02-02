@@ -5,7 +5,7 @@ a screen aligned quad for three.js
 
 [![stable](http://badges.github.io/stability-badges/dist/stable.svg)](http://github.com/badges/stability-badges)
 
-ThreeJS element for drawing stuff to screen. See [test](#testing) for an example.
+ThreeJS element for drawing stuff to screen. [Live](http://dusanbosnjak.com/test/webGL/three-screen-quad/).
 
 ```js
 var THREE = require('three')
