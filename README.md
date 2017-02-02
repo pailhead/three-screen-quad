@@ -94,3 +94,21 @@ _(Each argument can be either a float (representing percentage 0.0 - 1.0), or st
 ## testing
 
 Git clone, `npm install` and then run `npm start` to spin up a development server. Open `localhost:9966` in your browser to see the `test.js` file in action.
+
+##Todo
+
+Expose a better mechanism to attach a material. Right now you can pass a `fragmentShader` argument, but the uniforms are obscured. You can still access them though with 'myScreenQuadInstance.material.uniforms'.
+
+A simple shader that reads the `uTexture` uniform:
+
+```
+varying vec2 vUv;,
+
+uniform sampler2D uTexture;
+
+void main(){
+
+	gl_FragColor = texture2D( uTexture , vUv );
+
+}
+```
