@@ -56,6 +56,7 @@ function onWindowResize( width , height ){
 ```
 
 ## Usage
+[![NPM](https://nodei.co/npm/three-screen-quad.png)](https://npmjs.org/package/three-screen-quad)
 
 #### `ScreenQuad = require('three-screen-quad')(THREE)`
 
@@ -72,19 +73,23 @@ screenQuad = new OrbitControls({
 })
 ```
 
-##methods:
+##methods
 
-setWidth( value ) - (float | string), width of the element. 
-setHeight( value ) - (float | string), height of the element. 
-setTop( value ) - (float | string), distance from top of the canvas. 
-setLeft( value ) - (float | string), distance from the left edge of the canvas. 
+**setWidth( float | string )** - width of the element. 
 
-setOffset( top , left ) - sets both top and left at the same time
-setSize( width , height ) - sets both width and height at the same time
+**setHeight( float | string )** - height of the element. 
 
-Each argument can be either a float (representing percentage 0.0 - 1.0), or string (for pixel size '25px' );
+**setTop( float | string )** - distance from top of the canvas. 
 
-setScreenSize( width , height ) - sets the screensize in pixels, should be called when the canvas resizes, needed if there are any pixel values assigned
+**setLeft( float | string )** - distance from the left edge of the canvas. 
+
+**setOffset( top , left )** - sets both top and left at the same time
+
+**setSize( width , height )** - sets both width and height at the same time
+
+_(Each argument can be either a float (representing percentage 0.0 - 1.0), or string (for pixel size '25px' ))_;
+
+**setScreenSize( width , height )** - sets the screensize in pixels, should be called when the canvas resizes, needed if there are any pixel values assigned
 
 ## testing
 
