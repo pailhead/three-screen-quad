@@ -92,10 +92,12 @@ module.exports = function( THREE ){
 		console.log( width , height );
 		this.screenSize.set( width , height );
 
-		this._pixels.forEach( ( p , pi )=>{
+		var that = this;
+		
+		this._pixels.forEach( function(p,pi){
 
 			//if a component is set in pixels, update the uniform 
-			if ( p ) this._componentSetters[ pi ].call(this , this[ this._components[pi] ] );  
+			if ( p ) that._componentSetters[ pi ].call(that , that[ that._components[pi] ] );  
 			
 		});
 
