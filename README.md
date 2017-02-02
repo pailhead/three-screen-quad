@@ -112,3 +112,7 @@ void main(){
 
 }
 ```
+
+
+Three module pattern borrowed from:
+https://github.com/mattdesl/three-orbit-controls
