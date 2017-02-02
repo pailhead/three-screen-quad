@@ -65,7 +65,7 @@ This module exports a function which accepts an instance of THREE, and returns a
 The returned function has the following constructor pattern:
 
 ```js
-screenQuad = new OrbitControls({
+screenQuad = new ScreenQuad({
 	width: 	0.5, 
 	height: '50px',
 	top:    0.25, 
