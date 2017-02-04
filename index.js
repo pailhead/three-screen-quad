@@ -17,14 +17,15 @@ module.exports = function( THREE ){
 	var defaultFragmentShader = [
 		
 		"varying vec2 vUv;",
+		"uniform sampler2D uTexture;",
 		"void main(){",
-			"gl_FragColor = vec4( vUv , 0. , 1. );",
+			"gl_FragColor = texture2D( uTexture , vUv );",
 		"}"
 
 	].join("\n");
 
 
-	function ScreenQuad( params){
+	function ScreenQuad( params ){
 
 		params = params || {};
 
@@ -33,7 +34,7 @@ module.exports = function( THREE ){
 			uniforms:{
 				uTexture:{
 					type:'t',
-					value:null
+					value: undefined !== params.texture ? params.texture : null
 				},
 				uSize:{
 					type:'v4',
@@ -43,12 +44,13 @@ module.exports = function( THREE ){
 
 			vertexShader: defaultVertexShader,
 
-			fragmentShader: params.fragmentShader ? fragmentShader : defaultFragmentShader,
+			fragmentShader: params.fragmentShader ? params.fragmentShader : defaultFragmentShader,
 
 			depthWrite: false
 
 		})]);
 
+		this.frustumCulled = false;
 
 		this.renderOrder = -1;
 
