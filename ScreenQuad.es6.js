@@ -26,9 +26,11 @@ const defaultFragmentShader = `
 	
 varying vec2 vUv;
 
+uniform sampler2D uTexture;
+
 void main(){
 
-	gl_FragColor = vec4( vUv , 0. , 1. );
+	gl_FragColor = texture2D( uTexture , vUv );
 
 }	
 `;
@@ -42,7 +44,7 @@ export default class ScreenQuad extends THREE.Mesh{
 		height = 1,			//100%
 		top = 0,			
 		left = 0,
-		fullScreen = true,
+		texture = null,
 		fragmentShader = false
 	
 	} = {}) {
@@ -52,16 +54,12 @@ export default class ScreenQuad extends THREE.Mesh{
 			uniforms:{
 				uTexture:{
 					type:'t',
-					value:null
+					value: texture
 				},
 				uSize:{
 					type:'v4',
 					value:new THREE.Vector4(1,1,0,0)
-				},
-				// uScreenSize:{
-				// 	type:'v4',
-				// 	value: new THREE.Vector4(1,1,1,1),
-				// }
+				}
 			},
 
 			vertexShader: defaultVertexShader,
@@ -71,6 +69,8 @@ export default class ScreenQuad extends THREE.Mesh{
 			depthWrite: false
 
 		}));
+
+		this.frustumCulled = false;
 
 		this.renderOrder = -1;
 

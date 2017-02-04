@@ -102,7 +102,7 @@ Expose a better mechanism to attach a material. Right now you can pass a `fragme
 A simple shader that reads the `uTexture` uniform:
 
 ```
-varying vec2 vUv;,
+varying vec2 vUv;
 
 uniform sampler2D uTexture;
 
