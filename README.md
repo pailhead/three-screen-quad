@@ -95,23 +95,23 @@ Git clone, `npm install` and then run `npm start` to spin up a development serve
 
 ##Todo
 
-- Expose a better mechanism to attach a material. Right now you can pass a `fragmentShader` argument, but the uniforms are obscured. You can still access them though with 'myScreenQuadInstance.material.uniforms'.
+- Expose a better mechanism to attach a material. Right now you can pass a `fragmentShader` argument, but the uniforms are obscured. You can still access them though with 'myScreenQuadInstance.material.uniforms'. A simple shader that reads the `uTexture` uniform:
+
+	```glsl
+	varying vec2 vUv;
+
+	uniform sampler2D uTexture;
+
+	void main(){
+
+		gl_FragColor = texture2D( uTexture , vUv );
+
+	}
+	```
 - Add right, bottom anchors.
 - Allow for aspect to be locked when resizing in one axis. 
 
-A simple shader that reads the `uTexture` uniform:
 
-```
-varying vec2 vUv;
-
-uniform sampler2D uTexture;
-
-void main(){
-
-	gl_FragColor = texture2D( uTexture , vUv );
-
-}
-```
 
 
 Three module pattern borrowed from:
