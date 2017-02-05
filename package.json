@@ -1,6 +1,6 @@
 {
   "name": "three-screen-quad",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "a screen aligned quad for three.js",
   "main": "index.js",
   "license": "MIT",
