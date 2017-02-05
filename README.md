@@ -1,11 +1,9 @@
 # three-screen-quad
-a screen aligned quad for three.js
-
-
-
 [![stable](http://badges.github.io/stability-badges/dist/stable.svg)](http://github.com/badges/stability-badges)
 
-ThreeJS element for drawing stuff to screen. [Live](http://dusanbosnjak.com/test/webGL/three-screen-quad/).
+a screen aligned quad for [three.js](https://github.com/mrdoob/three.js/)
+
+ThreeJS element for drawing stuff to screen. It doesn't transform the plane on the cpu and uses the vertex shader to position it on screen. An abstract class controls a couple of uniforms and can figure out sizes in pixels. Setting `top:'25px',left:'25px` will keep the element anchored to the edge of the canvas. [Live](http://dusanbosnjak.com/test/webGL/three-screen-quad/).
 
 ```js
 var THREE = require('three')
@@ -97,7 +95,9 @@ Git clone, `npm install` and then run `npm start` to spin up a development serve
 
 ##Todo
 
-Expose a better mechanism to attach a material. Right now you can pass a `fragmentShader` argument, but the uniforms are obscured. You can still access them though with 'myScreenQuadInstance.material.uniforms'.
+- Expose a better mechanism to attach a material. Right now you can pass a `fragmentShader` argument, but the uniforms are obscured. You can still access them though with 'myScreenQuadInstance.material.uniforms'.
+- Add right, bottom anchors.
+- Allow for aspect to be locked when resizing in one axis. 
 
 A simple shader that reads the `uTexture` uniform:
 
