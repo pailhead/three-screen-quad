@@ -60,7 +60,7 @@ function onWindowResize( width , height ){
 
 This module exports a function which accepts an instance of THREE, and returns a ScreenQuad class. This allows you to use the module with CommonJS, globals, etc.
 
-The returned function has the following constructor pattern:
+The returned function has the following constructor pattern, and extends THREE.Mesh. See [three-fps-counter](https://github.com/pailhead/three-fps-counter) for an example on how to make an element that just renders to screen without being added to the graph.
 
 ```js
 screenQuad = new ScreenQuad({
