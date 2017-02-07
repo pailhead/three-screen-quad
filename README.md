@@ -64,10 +64,14 @@ The returned function has the following constructor pattern:
 
 ```js
 screenQuad = new ScreenQuad({
-	width: 	0.5, 
-	height: '50px',
-	top:    0.25, 
-	left:   '25px'
+	width: 	   0.5, 
+	height:    '50px',
+	top:       0.25, 
+	left:      '25px',
+    bottom:     0.5,           //top will override bottom if both are present in arguments
+    right:      0.5,           //left will override right
+    texture:    myTexture,     //to use the default shader
+    debug:      false          //true will render UVs of the quad
 })
 ```
 
@@ -81,11 +85,13 @@ screenQuad = new ScreenQuad({
 
 **setLeft( float | string )** - distance from the left edge of the canvas. 
 
-**setOffset( top , left )** - sets both top and left at the same time
+**setBottom( float | string )** - distance from bottom of the canvas. 
+
+**setRight( float | string )** - distance from the right edge of the canvas. 
 
 **setSize( width , height )** - sets both width and height at the same time
 
-_(Each argument can be either a float (representing percentage 0.0 - 1.0), or string (for pixel size '25px' ))_;
+_(Each argument can be either a float representing percentage **0.0 - 1.0**, or string representing pixel size **'25px'**)_;
 
 **setScreenSize( width , height )** - sets the screensize in pixels, should be called when the canvas resizes, needed if there are any pixel values assigned
 
@@ -108,7 +114,7 @@ Git clone, `npm install` and then run `npm start` to spin up a development serve
 
 	}
 	```
-- Add right, bottom anchors.
+- ~~Add right, bottom anchors.~~
 - Allow for aspect to be locked when resizing in one axis. 
 
 

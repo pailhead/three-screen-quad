@@ -32,7 +32,9 @@ function start(gl, width, height) {
         width: .5, 
         height: .5,
         top:'25px',
-        left: '25px'
+        left: '25px',
+        debug: true
+
     });
 
     screenQuad.setScreenSize( renderer.getSize().width , renderer.getSize().height );
