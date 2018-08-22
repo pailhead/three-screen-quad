@@ -116,7 +116,7 @@ module.exports = function( THREE ){
 			'right'
 		];
 
-		console.log( this , this.width , this.height );
+		// console.log( this , this.width , this.height );
 
 		this.screenSize = new THREE.Vector2( 1 , 1 );
 			
